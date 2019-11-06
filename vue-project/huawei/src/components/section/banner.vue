@@ -1,29 +1,8 @@
 <template>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/tz09myAWKphvCz6uiZ1P.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/a3cSX4J9WCo47G3yaOsO.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/EKRovBkFNmOva7OU88kG.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/9YJAzkp267ItUbthUM9c.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/7qAtkltxTYoxTLi4cxs7.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/d03uOTBEl1ALxDT8jPM3.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/YeI2AR07Wb9D6RZWryes.jpg" alt="">
-            </div>
-            <div class="swiper-slide box">
-                <img src="../../assets/homePage/A7ZqRw9Jjl4jK3VGRSc4.jpg" alt="">
+            <div class="swiper-slide box" :key='index' v-for="(item,index) in list">
+                <img :src='item.img'>
             </div>
         </div>
         <div class="swiper-pagination-white swiper-pagination-clickable swiper-pagination-bullets"></div>
@@ -36,7 +15,16 @@
         name: "banners",
         data() {
             return {
-                swiper:null
+                list:[
+                    {img:'./homePage/tz09myAWKphvCz6uiZ1P.jpg'},
+                    {img:'./homePage/a3cSX4J9WCo47G3yaOsO.jpg'},
+                    {img:'./homePage/EKRovBkFNmOva7OU88kG.jpg'},
+                    {img:'./homePage/9YJAzkp267ItUbthUM9c.jpg'},
+                    {img:'./homePage/7qAtkltxTYoxTLi4cxs7.jpg'},
+                    {img:'./homePage/d03uOTBEl1ALxDT8jPM3.jpg'},
+                    {img:'./homePage/YeI2AR07Wb9D6RZWryes.jpg'},
+                    {img:'./homePage/A7ZqRw9Jjl4jK3VGRSc4.jpg'}
+                ]
             }
         },
         mounted() {
@@ -65,6 +53,7 @@
         width: 3.75rem;
         height: 1.5rem;
         margin-top: 0.9rem;
+        z-index: 0;
     }
   .box{
       font-size: 0;

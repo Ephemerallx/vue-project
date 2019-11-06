@@ -1,23 +1,33 @@
 <template>
     <div class="foot">
         <div class="sign">
-            <img src="../assets/homePage/home_active.png" alt="">
+            <a  href="./" target="_self">
+                <img src="../assets/homePage/home_active.png" alt="">
+            </a>
+        </div>
+        <div class="usual" >
+            <a target="_blank">
+                <img src="../assets/homePage/category.png" alt="">
+                <p>分类</p>
+            </a>
         </div>
         <div class="usual">
-            <img src="../assets/homePage/category.png" alt="">
-            <p>分类</p>
+            <a target="_blank">
+                <img src="../assets/homePage/cart.png" alt="">
+                <p>发现</p>
+            </a>
         </div>
         <div class="usual">
-            <img src="../assets/homePage/cart.png" alt="">
-            <p>发现</p>
+            <a target="_blank">
+                <img src="../assets/homePage/find.png" alt="">
+                <p>购物车</p>
+            </a>
         </div>
         <div class="usual">
-            <img src="../assets/homePage/find.png" alt="">
-            <p>购物车</p>
-        </div>
-        <div class="usual">
-            <img src="../assets/homePage/personal.png" alt="">
-           <p>我的</p>
+            <a href="" target="_blank">
+                <img src="../assets/homePage/personal.png" alt="">
+                <p>我的</p>
+            </a>
         </div>
     </div>
 </template>

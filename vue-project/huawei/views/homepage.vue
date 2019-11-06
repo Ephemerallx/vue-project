@@ -1,13 +1,35 @@
 <template>
-    
+    <div id="app">
+        <headerTop></headerTop>
+        <banners></banners>
+        <hw-section></hw-section>
+        <hw-time-shop></hw-time-shop>
+        <main-cart></main-cart>
+        <footerBottom></footerBottom>
+        <router-link to="/"></router-link>
+    </div>
 </template>
 
 <script>
+    import header from '../src/components/header'
+    import footer from '../src/components/footer'
+    import banner from '../src/components/section/banner'
+    import sec from '../src/components/section/sec'
+    import timely from "../src/components/section/timely";
+    import mainCart from "../src/components/section/mainCart";
     export default {
-        name: "homepage"
+        name: 'homePage',
+        components: {
+            "headerTop":header,
+            "footerBottom":footer,
+            "banners":banner,
+            "hwSection":sec,
+            "hwTimeShop":timely,
+            "mainCart":mainCart
+        }
     }
 </script>
 
-<style scoped>
+<style>
 
 </style>

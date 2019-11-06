@@ -40,6 +40,7 @@
         box-shadow: 0rem 0.06rem 0.2rem -0.15rem;
         position: fixed;
         top: 0;
+        z-index: 10;
     }
     .search{
         width: 100%;
@@ -50,6 +51,9 @@
     }
     .search img{
         width: 70%;
+    }
+    .search li{
+        display: inline-block;
     }
     .logo{
         width: 20%;
@@ -100,6 +104,7 @@
         white-space: nowrap;
     }
     .list li{
+        display: inline-block;
         margin: 0.18rem;
         font-size: 0.14rem;
         color: gray;
