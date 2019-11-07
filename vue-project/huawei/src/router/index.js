@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import homepage from "../../views/homepage";
 import classify from "../../views/classify";
 import discovery from "../../views/discovery";
+import cart from "../../views/cart";
 import mine from "../../views/mine";
 Vue.use(VueRouter)
 
@@ -25,8 +26,14 @@ let router = new VueRouter({
             component:discovery,
         },
         {
+            path:'/cart',
+            component:cart
+        },
+        {
             path:'/mine',
             component:mine,
         }
     ]
 })
+
+export default router

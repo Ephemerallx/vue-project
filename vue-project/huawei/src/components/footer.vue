@@ -1,40 +1,47 @@
 <template>
     <div class="foot">
         <div class="sign">
-            <a  href="./" target="_self">
+            <router-link :to="'/homepage/'">
                 <img src="../assets/homePage/home_active.png" alt="">
-            </a>
+            </router-link>
         </div>
-        <div class="usual" >
-            <a target="_blank">
+        <div class="usual">
+            <router-link :to="'/classify'">
                 <img src="../assets/homePage/category.png" alt="">
                 <p>分类</p>
-            </a>
+            </router-link>
         </div>
         <div class="usual">
-            <a target="_blank">
+            <router-link :to="'/discovery'">
                 <img src="../assets/homePage/cart.png" alt="">
                 <p>发现</p>
-            </a>
+            </router-link>
         </div>
         <div class="usual">
-            <a target="_blank">
+            <router-link :to="'/cart'">
                 <img src="../assets/homePage/find.png" alt="">
                 <p>购物车</p>
-            </a>
+            </router-link>
         </div>
         <div class="usual">
-            <a href="" target="_blank">
+            <router-link :to="'/mine'">
                 <img src="../assets/homePage/personal.png" alt="">
                 <p>我的</p>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "footerBottom"
+        name: "footerBottom",
+        data(){
+            return{
+                datalist:[
+
+                ]
+            }
+        }
     }
 </script>
 
@@ -51,6 +58,7 @@
     .foot div{
         width: 18%;
         font-size: 0;
+        text-align: center;
     }
     .sign img{
         width: 80%;
@@ -62,5 +70,6 @@
         font-size: 0.12rem;
         text-align: center;
         margin-top: 0.05rem;
+        color: gray;
     }
 </style>

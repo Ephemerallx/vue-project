@@ -28,8 +28,19 @@
 </template>
 
 <script>
+    import Swiper from 'swiper'
     export default {
-        name: "homepageTop"
+        name: "homepageTop",
+        mounted() {
+            this._initSwiper();
+        },
+        methods: {
+            _initSwiper() {
+                new Swiper(".swiper-container",{
+                    effect: "slide"
+                 })
+            }
+        }
     }
 </script>
 
@@ -76,8 +87,10 @@
         display: inline-block;
         position: relative;
         top: 50%;
+        left: 0.2rem;
+        color:gray;
         transform: translateY(-50%);
-        font-size: 0.14rem;
+        font-size: 0.12rem;
     }
     .searching{
         display: inline-block;

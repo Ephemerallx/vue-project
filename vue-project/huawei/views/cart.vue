@@ -1,18 +1,18 @@
 <template>
-    <div class="mine">
-        我的
+    <div class="carting">
+        购物车
     </div>
 </template>
 
 <script>
     export default {
-        name: "mine"
+        name: "cart"
     }
 </script>
 
 <style scoped>
-    .mine{
-       background-color: aqua;
+    .carting{
+        background-color: burlywood;
         font-size: 0.14rem;
     }
 </style>

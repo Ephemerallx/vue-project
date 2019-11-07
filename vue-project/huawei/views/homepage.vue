@@ -1,22 +1,21 @@
 <template>
     <div id="app">
-        <headerTop></headerTop>
+        <header-top></header-top>
         <banners></banners>
         <hw-section></hw-section>
         <hw-time-shop></hw-time-shop>
         <main-cart></main-cart>
-        <footerBottom></footerBottom>
-        <router-link to="/"></router-link>
+        <footer-bottom></footer-bottom>
     </div>
 </template>
 
 <script>
     import header from '../src/components/header'
     import footer from '../src/components/footer'
-    import banner from '../src/components/section/banner'
-    import sec from '../src/components/section/sec'
-    import timely from "../src/components/section/timely";
-    import mainCart from "../src/components/section/mainCart";
+    import banner from '../src/components/home/banner'
+    import sec from '../src/components/home/sec'
+    import timely from "../src/components/home/timely";
+    import mainCart from "../src/components/home/mainCart";
     export default {
         name: 'homePage',
         components: {
