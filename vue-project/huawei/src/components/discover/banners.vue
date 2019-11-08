@@ -31,6 +31,7 @@
                     loop:true,
                     autoplay:true,
                     delay:3000,
+                    spaceBetween:0,
                     autoplayDisableOnInteraction: false,
                     pagination: {
                         el:'.swiper-pagination'

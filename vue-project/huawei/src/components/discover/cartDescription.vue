@@ -19,20 +19,23 @@
 </template>
 
 <script>
-    import messageOfThirdApi from "../../apis/messageOfThirdApi";
+    import message from '../../mocks/searchForMessage';
+    // import messageOfThirdApi from "../../apis/messageOfThirdApi";
     export default {
         name: "cartDescription",
         data(){
             return {
-                message:[]
+                message: []
             }
         },
         methods: {
             _initPageData(){
-                messageOfThirdApi.getMessageById(data => {
-                    console.log(data);
-                    this.message = data;
-                })
+                // messageOfThirdApi.getMessage(data => {
+                //     console.log(data);
+                //     this.message = data;
+                // })
+                let data=message.get();
+                console.log(data);
             }
         },
         created() {

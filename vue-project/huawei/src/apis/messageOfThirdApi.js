@@ -1,11 +1,12 @@
 import {BASEURL} from "../commons/config"
 
-const MSGURL = `${BASEURL}/api/message`
+const MSGURL = `${BASEURL}/information`
 
 export default {
-    getMessageById(msg){
-        fetch(MSGURL).then(res=>{
-            res.json().then(msg)
+    getMessage(cb){
+        fetch(MSGURL).then(res =>{
+            res.json().then(cb);
+            console.log(cb);
         })
     }
 

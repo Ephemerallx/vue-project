@@ -1,15 +1,9 @@
 <template>
     <div class="top_line">
         <h2>商城头条</h2>
-        <p >声明<span>i</span></p>
-        <van-dialog
-                v-model="show"
-                title="标题"
-                show-cancel-button
-        >
-            <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
-        </van-dialog>
-        <div class="hiden"></div>
+        <p class="tip">声明<span>i</span></p>
+        <van-cell is-link @click="appear">声明</van-cell>
+        <van-popup v-model="show"></van-popup>
         <ul>
             <li class="item" v-for="(n,index) in datalist" :key="index">
                 <a>
@@ -21,14 +15,9 @@
 </template>
 
 <script>
-    import { Dialog } from 'vant';
-    // import open from "../../router/open";
+    import { Popup,Cell } from 'vant';
     export default {
         name: "headline",
-        msg:{
-            flag:false
-        },
-
         data(){
             return {
                 datalist:[
@@ -37,11 +26,18 @@
                     {img:'./discovery/gVFhFTMl1zhmAoCiXX69.png'},
                     {img:'./discovery/0JkZba0fXbu73EJDCKps.png'},
                     {img:'./discovery/RXRlTtaCvzSJPq46bp46.png'}
-                ]
+                ],
+                show: false
             }
         },
         components: {
-            "van-dialog":Dialog
+            "van-cell": Popup,
+            "van-popup":Cell
+        },
+        methods: {
+            appear(){
+               this.show=true;
+            }
         }
     }
 </script>
@@ -56,21 +52,14 @@
         font-weight: 400;
         padding: 0.1rem 0;
     }
-    .top_line p{
+    .tip{
         font-size: 0.12rem;
         position: absolute;
         color: gray;
         top: 2.9rem;
         left: 3.2rem;
     }
-    .hiden{
-        width: 80%;
-        margin: 0 auto;
-        height: 3.12rem;
-        font-size: 0.12rem;
-        text-align: left;
-    }
-    .top_line span{
+    .tip span{
         display: inline-block;
         width: 0.1rem;
         height: 0.1rem;

@@ -37,9 +37,11 @@
                     loop:true,
                     autoplay:true,
                     delay:3000,
+                    spaceBetween:0,
                     autoplayDisableOnInteraction: false,
                     pagination: {
-                        el:'.swiper-pagination'
+                        el:'.swiper-pagination',
+                        clickable: true
                     }
                 })
             }
@@ -65,7 +67,7 @@
       position: relative;
       z-index: 1;
   }
-    .swiper-slide img{
+    .box img{
         width: 96%;
         height: 100%;
         border-radius: 0.1rem 0.1rem;
