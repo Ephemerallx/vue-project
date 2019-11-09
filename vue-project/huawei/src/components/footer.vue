@@ -1,9 +1,12 @@
 <template>
     <div class="foot">
-        <router-link :to="data.url" @click="changeStyle(index)" v-for="(data,index) in tabs" :key="index">
-            <img :src="current===index?data.activePic:data.normalPic">
-            <p :class="current===index?'red':'black'">{{data.name}}</p>
-        </router-link>
+        <div  v-for="(n,index) in tabs" :key="index" class="part">
+            <router-link :to="n.url"  @click="changeStyle(index) ">
+                    <img :src="n.url=== $route.path ? n.activePic:n.normalPic">
+                    <p  :class="c===index?'red':'black'">{{n.name}}</p>
+            </router-link>
+        </div>
+
     </div>
 </template>
 
@@ -15,8 +18,8 @@
                 tabs: [
                     {
                         name: "首页",
-                        normalPic: './homePage/home_active.png',
-                        activePic: './homePage/h.png',
+                        normalPic: './homePage/home.png',
+                        activePic: './homePage/home_active.png',
                         url: "/homepage"
                     },
                     {
@@ -45,12 +48,12 @@
                     }
 
                 ],
-                current: 0
+                c: 0
             }
         },
         methods:{
             changeStyle(index){
-                this.current=index;
+                this.c=index;
             }
         }
     }
@@ -68,13 +71,30 @@
         font-size: 0;
         text-align: center;
     }
-   .foot img{
-       width: 60%;
+    .foot router-link-active{
+        color: crimson;
+    }
+    .part{
+        width:18%;
+        font-size: 0;
+        text-align: center;
+    }
+   .part img{
+       width: 40%;
+       display: block;
+       position: relative;
+       left: 50%;
+       transform: translateX(-50%);
    }
     .foot p{
         font-size: 0.12rem;
-        text-align: center;
         margin-top: 0.05rem;
         color: gray;
+    }
+    .red{
+        color:red
+    }
+    .black{
+        color:black;
     }
 </style>

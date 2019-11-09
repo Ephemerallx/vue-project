@@ -1,6 +1,6 @@
 <template>
     <div class="description" >
-        <div class="part_one" v-for="(n,index) in message" :key="index">
+        <div class="part_one" v-for="(n,index) in message.information" :key="index">
             <a class="version">
                 <img :src="n.img">
             </a>
@@ -20,12 +20,11 @@
 
 <script>
     import message from '../../mocks/searchForMessage';
-    // import messageOfThirdApi from "../../apis/messageOfThirdApi";
     export default {
         name: "cartDescription",
         data(){
             return {
-                message: []
+                message: {}
             }
         },
         methods: {
@@ -34,8 +33,8 @@
                 //     console.log(data);
                 //     this.message = data;
                 // })
-                let data=message.get();
-                console.log(data);
+                this.message=message.get();
+                console.log(message);
             }
         },
         created() {
@@ -85,18 +84,20 @@
         padding: 0.05rem 0;
     }
     .about{
-        width: 100%;
-        padding: 0.05rem;
+        width: 95%;
+        padding: 0.05rem 0;
     }
     .about a:nth-child(1){
         width: 50%;
-        text-align: left;
+        position: relative;
+        left: 0.1rem;
         color: gray;
         font-size: 0.12rem;
     }
     .about a:nth-child(2){
         width: 50%;
-        text-align: right;
+        position: relative;
+        left: 2.3rem;
         font-size: 0.12rem;
         color: gray;
     }

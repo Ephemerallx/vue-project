@@ -2,11 +2,12 @@
     <div>
         <div class="classify_left">
             <ul>
-                <li v-for="(n,index) in details.list" :key="index" @click="changePage(index)"  :class="m===index?'red':'black'">{{n.name}}</li>
+                <li v-for="(n,index) in details.list" :key="index" @click="changePage(index)"  :class="m===index?'red':'black'">
+                    <span>{{n.name}}</span>
+                </li>
             </ul>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -26,7 +27,7 @@
                 //     this.message = data;
                 // })
                 this.details=details.getMessage();
-                console.log(this.details);
+                // console.log(this.details);
             },
             changePage(index){
                 this.m=index;
@@ -34,6 +35,9 @@
         },
         created() {
             this._initPageData();
+        },
+        mounted() {
+            this.$eventBus.$emit("changePage","key");
         }
     }
 </script>
@@ -47,15 +51,18 @@
     .classify_left ul{
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
     }
     .classify_left li{
         display: block;
-        padding: 0.2rem 0;
+        margin: 0.2rem 0;
         font-size: 0.14rem;
         font-weight: 500;
+        box-sizing: border-box;
     }
     .red{
         color: crimson;
+        border-right: 0.02rem solid crimson;
     }
     .black{
         color: black;

@@ -81,7 +81,7 @@ module.exports = {
                     name:"荣耀手机",
                     "item":[
                         {
-                            "text2": 'HUAWEI Mate系列',
+                            "text1": '荣耀系列',
                             "intro": [
                                 {"img": './class/428_428_BBB155FB6C09744712785FB380EA616E967F4F8F8CAEC76Amp.png',
                                     "msgs": 'HUAWEI Mate 30 Pro 5G'},
@@ -127,6 +127,8 @@ module.exports = {
                             "details":[
                                 {"img":'./class/428_428_1555465064246mp.png',
                                     "msgs":'HUAWEI P 30'},
+                                {"img":'./class/428_428_1553080852384mp.png',
+                                    "msgs":'HUAWEI P 30 Pro'},
                                 {"img":'./class/428_428_1553080852384mp.png',
                                     "msgs":'HUAWEI P 30 Pro'}
                             ],
