@@ -15,15 +15,18 @@
                <img src="../assets/homePage/personal.png" alt="">
            </li>
        </ul>
-        <ul class="list">
-            <li>推荐</li>
-            <li>华为</li>
-            <li>荣耀</li>
-            <li>Mate30系列</li>
-            <li>11.11狂欢节</li>
-            <li>拼团</li>
-            <li>数码惠</li>
-        </ul>
+        <div class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide box">推荐</li>
+                <li class="swiper-slide box">华为</li>
+                <li class="swiper-slide box">荣耀</li>
+                <li class="swiper-slide box">Mate30系列</li>
+                <li class="swiper-slide box">11.11狂欢节</li>
+                <li class="swiper-slide box">拼团</li>
+                <li class="swiper-slide box">数码惠</li>
+            </ul>
+        </div>
+
     </div>
 </template>
 
@@ -34,17 +37,20 @@
         mounted() {
             this._initSwiper();
         },
-        methods: {
-            _initSwiper() {
-                new Swiper(".swiper-container",{
-                    effect: "slide"
-                 })
+        methods:{
+            _initSwiper(){
+                new Swiper('.swiper-container',{
+                    loop: true,
+                    slidesPerView: 'auto',
+                    loopedSlides: 7,
+                })
             }
         }
     }
 </script>
 
 <style scoped>
+    @import "../../node_modules/swiper/css/swiper.css";
     .head{
         width: 100%;
         background-color:white;
@@ -110,13 +116,13 @@
         width: 10%;
         font-size: 0;
     }
-    .list{
+    .swiper-wrapper{
         width: 100%;
         font-size: 0;
         overflow: hidden;
         white-space: nowrap;
     }
-    .list li{
+    .box{
         display: inline-block;
         margin: 0.18rem;
         font-size: 0.14rem;

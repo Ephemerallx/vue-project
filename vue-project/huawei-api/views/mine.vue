@@ -1,18 +1,24 @@
 <template>
     <div class="mine">
-        我的
+        <mine-roof></mine-roof>
+        <footer-bottom></footer-bottom>
     </div>
 </template>
 
 <script>
+    import roof from "../src/components/mine/roof";
+    import footer from "../src/components/footer";
     export default {
-        name: "mine"
+        name: "mine",
+        components:{
+            "mine-roof":roof,
+            "footer-bottom":footer
+        }
     }
 </script>
 
 <style scoped>
     .mine{
-       background-color: aqua;
         font-size: 0.14rem;
     }
 </style>

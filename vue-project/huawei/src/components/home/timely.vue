@@ -4,15 +4,15 @@
             <span class="b_first">限时购</span>
             <span class="b_second"></span>
             <span class="b_third">
-                <em>03:</em>
-                <em>18:</em>
-                <em>37</em>
+                <span>03:</span>
+                <span>18:</span>
+                <span>37</span>
             </span>
             <span class="b_fourth">后结束</span>
         </div>
-        <div class="slide_product">
-            <ul>
-                <li v-for="(n,index) in datalist" :key='index'>
+        <div class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide box" v-for="(n,index) in datalist" :key='index' >
                     <div class="cart_details">
                         <img :src='n.img'>
                         <p>{{n.description}}</p>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+    import Swiper from 'swiper'
     export default {
         name: "timely",
         data(){
@@ -61,23 +62,36 @@
                         reffer:'最高省500免息'
                     },
                     {
-                        img:'./homepage/142_142_1540524481878mp.png',
-                        description:'FlyPods Pro耳机',
-                        reffer:'799元'
-                    },
-                    {
                         img:'./homepage/142_142_1545268730575mp.png',
-                        description:'FlyPods青春版',
-                        reffer:'低至1790元'
+                        description:'FlyPods Pro耳机',
+                        reffer:'299元'
                     },
                     {
-                        img:'./homepage/142_142_1542266481382mp.png',
-                        description:'儿童手表 3 Pro',
-                        reffer:'限时直降150'
+                        img:'./homepage/142_142_1563239675439mp.png',
+                        description:'FreeLace 耳机',
+                        reffer:'限时优惠100'
+                    },
+                    {
+                        img:'./homepage/142_142_1540544249192mp.png',
+                        description:'荣耀魔法手表',
+                        reffer:'最高优惠300'
                     }
                 ]
             }
+        },
+        mounted() {
+            this._initSwiper();
+        },
+        methods:{
+            _initSwiper(){
+                new Swiper('.swiper-container',{
+                    loop: true,
+                    slidesPerView: 'auto',
+                    loopedSlides: 9,
+                })
+            }
         }
+
     }
 </script>
 
@@ -111,18 +125,18 @@
         font-size: 0.12rem;
         color: gray;
     }
-    .slide_product{
+    .swiper-container{
         width: 100%;
         font-size: 0;
         margin-top: 0.1rem;
         text-align: center;
-    }
-    .slide_product ul{
-        width: 100%;
         overflow: hidden;
+    }
+    .swiper-wrapper{
+        width: 100%;
         white-space: nowrap;
     }
-    .slide_product li{
+    .box{
         width: 21%;
         /*height: 0.9rem;*/
         display: inline-block;

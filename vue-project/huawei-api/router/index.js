@@ -5,6 +5,7 @@ import classify from "../../views/classify";
 import discovery from "../../views/discovery";
 import cart from "../../views/cart";
 import mine from "../../views/mine";
+import detail from "../components/cart/product/detail";
 Vue.use(VueRouter)
 
 let router = new VueRouter({
@@ -28,6 +29,10 @@ let router = new VueRouter({
         {
             path:'/cart',
             component:cart
+        },
+        {
+            path:'/detail',
+            component:detail
         },
         {
             path:'/mine',

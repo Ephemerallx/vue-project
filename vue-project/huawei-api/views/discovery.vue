@@ -1,5 +1,5 @@
 <template>
-    <div class="find">
+    <div class="ins">
         <head-top></head-top>
         <banners></banners>
         <list></list>
@@ -30,7 +30,7 @@
 </script>
 
 <style scoped>
-    .find{
+    .ins{
        width: 100%;
     }
 

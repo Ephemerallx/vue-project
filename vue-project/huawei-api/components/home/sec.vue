@@ -16,8 +16,8 @@
                 <img src="../../assets/homePage/logo_wapHeadNews.png" alt="">
             </div>
             <div class="verticalList">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide box" v-for='(t,index) in textList' :key='index'>
+                <ul class="swip">
+                    <li class="text_line" v-for='(t,index) in textList' :key='index'>
                         <p>{{t.text}}</p>
                     </li>
                 </ul>
@@ -104,15 +104,16 @@
   }
   .sec_bottom{
       width: 100%;
-      /*margin-top: 0.1rem;*/
+      font-size: 0;
       border-top:0.01rem solid ghostwhite;
+      padding:0.2rem 0;
   }
   .littleLogo{
       width: 15%;
       display: inline-block;
       font-size: 0;
       position: relative;
-      top: -0.4rem;
+      top: -0.02rem;
       left: 0.1rem;
   }
   .littleLogo img{
@@ -122,26 +123,34 @@
       width:75%;
       font-size: 0.12rem;
       display: inline-block;
-      margin-left:0.1rem
+      margin-left:0.2rem
   }
-  .swiper-wrapper{
+  .swip{
       overflow: hidden;
-      width:100%;
-      height:0.42rem;
+      width:90%;
+      height:0.18rem;
+      display: inline-block;
   }
-  .box{
-      width: 80%;
+  .text_line{
+      width: 100%;
       display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
   }
-  .box p{
+  .text_line p{
     font-size: 0.12rem;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .swiper-wrapper span{
-      font-size: 0.14rem;
-      width: 20%;
+  .more{
+      display: inline-block;
+      font-size: 0.12rem;
+      width: 10%;
+      position: relative;
+      top: -0.05rem;
+      text-align: right;
   }
 </style>

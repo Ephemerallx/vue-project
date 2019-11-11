@@ -1,7 +1,7 @@
 <template>
-    <div id="app">
+    <div class="staple">
         <header-top></header-top>
-        <banners></banners>
+        <banner></banner>
         <hw-section></hw-section>
         <hw-time-shop></hw-time-shop>
         <main-cart></main-cart>
@@ -21,7 +21,7 @@
         components: {
             "headerTop":header,
             "footerBottom":footer,
-            "banners":banner,
+            "banner":banner,
             "hwSection":sec,
             "hwTimeShop":timely,
             "mainCart":mainCart
@@ -29,6 +29,8 @@
     }
 </script>
 
-<style>
-
+<style scoped>
+    .staple{
+        width: 100%;
+    }
 </style>

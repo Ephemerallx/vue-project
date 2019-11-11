@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import Vue from 'vue'
+    // import Vue from 'vue'
     import classTop from "../src/components/classify/classTop";
     import classLeft from "../src/components/classify/classLeft";
     import classRight from "../src/components/classify/classRight";
@@ -23,11 +23,7 @@
             "footer-bottom":footer
         }
     }
-    //事件总线: 用来注册公共的事件监听的对象叫做事件总线
-    //创建一个vue实例，只用来监听事件，
-    let eventBus = new Vue();
-    //扩展vue类的实例对象
-    Vue.prototype.$eventBus = eventBus;
+
 </script>
 
 <style scoped>

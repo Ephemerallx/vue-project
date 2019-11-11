@@ -1,34 +1,12 @@
 <template>
     <div class="foot">
-        <div class="sign">
-            <router-link :to="'/homepage/'">
-                <img src="../assets/homePage/home_active.png" alt="">
+        <div  v-for="(n,index) in tabs" :key="index" class="part">
+            <router-link :to="n.url"  @click="changeStyle(index) ">
+                    <img :src="n.url=== $route.path ? n.activePic:n.normalPic">
+                    <p  :class="c===index?'red':'black'">{{n.name}}</p>
             </router-link>
         </div>
-        <div class="usual">
-            <router-link :to="'/classify'">
-                <img src="../assets/homePage/category.png" alt="">
-                <p>分类</p>
-            </router-link>
-        </div>
-        <div class="usual">
-            <router-link :to="'/discovery'">
-                <img src="../assets/homePage/cart.png" alt="">
-                <p>发现</p>
-            </router-link>
-        </div>
-        <div class="usual">
-            <router-link :to="'/cart'">
-                <img src="../assets/homePage/find.png" alt="">
-                <p>购物车</p>
-            </router-link>
-        </div>
-        <div class="usual">
-            <router-link :to="'/mine'">
-                <img src="../assets/homePage/personal.png" alt="">
-                <p>我的</p>
-            </router-link>
-        </div>
+
     </div>
 </template>
 
@@ -36,10 +14,46 @@
     export default {
         name: "footerBottom",
         data(){
-            return{
-                datalist:[
+            return {
+                tabs: [
+                    {
+                        name: "首页",
+                        normalPic: './homePage/home.png',
+                        activePic: './homePage/home_active.png',
+                        url: "/homepage"
+                    },
+                    {
+                        name: "分类",
+                        normalPic: './homePage/category.png',
+                        activePic: './homePage/category_active.d935077.png',
+                        url: "/classify"
+                    },
+                    {
+                        name: "发现",
+                        normalPic: './homePage/find.png',
+                        activePic: './homePage/find_active.9f755fd.png',
+                        url: "/discovery"
+                    },
+                    {
+                        name: "购物车",
+                        normalPic: './homePage/cart.png',
+                        activePic: './homePage/cart_active.png',
+                        url: "/cart"
+                    },
+                    {
+                        name: "我的",
+                        normalPic: './homePage/personal.png',
+                        activePic: './homePage/personal_active.png',
+                        url: "/mine"
+                    }
 
-                ]
+                ],
+                c: 0
+            }
+        },
+        methods:{
+            changeStyle(index){
+                this.c=index;
             }
         }
     }
@@ -53,23 +67,34 @@
         position: fixed;
         bottom: 0;
         background-color: white;
-        padding-top: 0.05rem;
-    }
-    .foot div{
-        width: 18%;
+        padding: 0.05rem 0;
         font-size: 0;
         text-align: center;
     }
-    .sign img{
-        width: 80%;
+    .foot router-link-active{
+        color: crimson;
     }
-   .usual img{
-       width: 40%;
-   }
-    .foot div p{
-        font-size: 0.12rem;
+    .part{
+        width:18%;
+        font-size: 0;
         text-align: center;
+    }
+   .part img{
+       width: 40%;
+       display: block;
+       position: relative;
+       left: 50%;
+       transform: translateX(-50%);
+   }
+    .foot p{
+        font-size: 0.12rem;
         margin-top: 0.05rem;
         color: gray;
+    }
+    .red{
+        color:red
+    }
+    .black{
+        color:black;
     }
 </style>
