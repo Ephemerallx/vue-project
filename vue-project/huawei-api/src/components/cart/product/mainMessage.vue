@@ -45,7 +45,7 @@
         },
         methods: {
             _initPageData(){
-                this.detail=cartMessage.get();
+                this.detail=cartMessage.getCart();
             },
             // changeStyle(){
             //     this.m=false;
