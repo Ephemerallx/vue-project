@@ -3,11 +3,12 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import '../public/common.css'
 import router from './router'
-import { Dialog } from 'vant'
+import { Popup } from 'vant';
+
+Vue.use(Popup);
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-Vue.use(Dialog)
 //事件总线: 用来注册公共的事件监听的对象叫做事件总线
 //创建一个vue实例，只用来监听事件，
 let eventBus = new Vue();
@@ -16,5 +17,4 @@ Vue.prototype.$eventBus = eventBus;
 new Vue({
   render: h => h(App),
   router,
-  Dialog
 }).$mount('#app')
